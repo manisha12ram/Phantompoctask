@@ -1,0 +1,33 @@
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th>E-mail</th>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let data of arrayDatas; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{data.firstName}} {{data.lastName}} </td>
+    <td>{{data.phoneNumber}}</td>
+    <td>{{data.email}}</td>
+    <td>{{data.street}}</td>
+    <td>{{data.lat}}</td>
+    <td>{{data.long}}</td>
+    <td>
+      <button (click)="onEdit(data, i+1)">
+        Edit
+      </button>
+      <button (click)="onDelete(i)">
+        Delete
+      </button>
+    </td>
+  </tr>
+
+</table>
